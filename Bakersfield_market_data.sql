@@ -48,13 +48,6 @@ WITH ranked AS (
         ROW_NUMBER() OVER (ORDER BY Date DESC)  AS rn
     FROM weekly_market
 )
-
-WITH ranked AS (
-    SELECT
-        *,
-        ROW_NUMBER() OVER (ORDER BY Date DESC) AS rn
-    FROM weekly_market
-)
 SELECT
     current.Date,
     current.Median_Sale_Price,
